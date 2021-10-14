@@ -6,6 +6,7 @@ public class Transluscent : MonoBehaviour
 {
     Quaternion q;
     Vector3 rot;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,8 @@ public class Transluscent : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Debug.DrawLine(transform.position, transform.forward);
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))
+        Debug.DrawLine(transform.position, transform.forward * 100f, Color.yellow, Mathf.Infinity);
+        if (Physics.Raycast(transform.position, player.transform.position, out hit, Mathf.Infinity))
         {
             Debug.Log(hit.distance);
         }
