@@ -10,6 +10,8 @@ public class LibrarianAI : MonoBehaviour
     public Player player;
     public Vector3 targetVector;
 
+    public GameObject alert;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +21,17 @@ public class LibrarianAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.noiseLevel >= .5f)
+        if (player.noiseLevel >= .75f)
         {
             targetVector = destination.transform.position;
             Debug.Log("WOAH");
+
+            alert.SetActive(true);
         }
         else
         {
             StartCoroutine(Wander());
+            alert.SetActive(false);
         }
 
         navMeshAgent.SetDestination(targetVector);

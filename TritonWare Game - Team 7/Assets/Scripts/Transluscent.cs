@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Transluscent : MonoBehaviour
 {
-    Quaternion q;
-    Vector3 rot;
-    public GameObject player;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        q = transform.rotation;
-        rot = -transform.position;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
-        Debug.DrawLine(transform.position, transform.forward * 100f, Color.yellow, Mathf.Infinity);
-        if (Physics.Raycast(transform.position, player.transform.position, out hit, Mathf.Infinity))
+
+        //i changed the position and rotation to the camera's 
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
         {
-            Debug.Log(hit.distance);
+            //Debug.Log(hit.distance);
+            Debug.DrawLine(transform.position, transform.forward * 100f, Color.yellow);
+
+            if (hit.transform.tag == "Block")
+            {
+                //make translucent
+
+            }
+            else
+            {
+                //make opaque
+            }
         }
     }
 }

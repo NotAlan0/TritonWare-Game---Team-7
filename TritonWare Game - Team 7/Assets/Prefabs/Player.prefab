@@ -81,8 +81,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signal: {fileID: 0}
   distance: 0
-  strength: 0
   hotspot: {fileID: 0}
+  noise: {fileID: 0}
+  noiseLevel: 0
+  currentPos: {x: 0, y: 0, z: 0}
+  lastPos: {x: 0, y: 0, z: 0}
+  circle: {fileID: 0}
+  sending: {fileID: 0}
+  loading: {fileID: 0}
 --- !u!1 &1907300341125677976
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907300341773369531}
   m_LocalRotation: {x: 0.42261827, y: -0, z: -0, w: 0.9063079}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0, y: -0.37, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 1907300341125677981}

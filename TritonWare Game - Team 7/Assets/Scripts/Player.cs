@@ -14,10 +14,14 @@ public class Player : MonoBehaviour
     public Vector3 currentPos;
     public Vector3 lastPos;
 
+    public Image circle;
+    public GameObject sending;
+    public GameObject loading;
+
     // Start is called before the first frame update
     void Start()
     {
-        //hotspot = GameObject.FindWithTag("Hotspot");
+        circle.fillAmount = 0;
     }
 
     void Update()
@@ -30,6 +34,20 @@ public class Player : MonoBehaviour
         distance = Vector3.Distance(hotspot.position, transform.position);
 
         signal.fillAmount = 1 / distance + .25f;
+
+
+        if (signal.fillAmount >= .8f)
+        {
+            loading.SetActive(true);
+            sending.SetActive(true);
+
+            circle.fillAmount += .5f * Time.deltaTime;
+        }
+        else
+        {
+            loading.SetActive(false);
+            sending.SetActive(false);
+        }
 
         currentPos = transform.position;
         if (currentPos == lastPos && noiseLevel >= 0)
