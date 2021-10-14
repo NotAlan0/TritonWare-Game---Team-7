@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5706837415195823614}
   - component: {fileID: 5706837415195823615}
   - component: {fileID: 5706837415195823603}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Bookshelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5706837416177192723}
   - component: {fileID: 5706837416177192732}
   - component: {fileID: 5706837416177192733}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
