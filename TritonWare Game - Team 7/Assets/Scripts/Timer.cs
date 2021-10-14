@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
+                Debug.Log("Due time has passed, you dead!");
                 timeRemaining = 0;
                 timerIsRunning = false;
             }

@@ -5,10 +5,13 @@ using UnityEngine.AI;
 
 public class LibrarianAI : MonoBehaviour
 {
-    public Transform destination;
+    public Transform playerPos;
     NavMeshAgent navMeshAgent;
     public Player player;
-    public Vector3 targetVector;
+
+    public Vector3 target;
+    [SerializeField]
+    private Vector3 currentPosition;
 
     public GameObject alert;
 
@@ -16,31 +19,46 @@ public class LibrarianAI : MonoBehaviour
     void Start()
     {
         navMeshAgent = this.GetComponent<NavMeshAgent>();
+        target = new Vector3(0f,1.083333f,0f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentPosition = transform.position;
+
         if (player.noiseLevel >= .75f)
         {
-            targetVector = destination.transform.position;
+            target = new Vector3(playerPos.position.x, 1.083333f, playerPos.position.z);
             Debug.Log("WOAH");
 
             alert.SetActive(true);
         }
         else
         {
-            StartCoroutine(Wander());
+            if (currentPosition == target)
+            {
+                Wander();
+            }
+            
             alert.SetActive(false);
         }
 
-        navMeshAgent.SetDestination(targetVector);
+        navMeshAgent.SetDestination(target);
     }
 
-    IEnumerator Wander()
+    void Wander()
     {
-        yield return new WaitForSeconds(10);
-        Vector3 nextTarget = new Vector3(UnityEngine.Random.Range(-20, 20), 0, UnityEngine.Random.Range(-20, 20));
-        targetVector = nextTarget;
+        Vector3 nextTarget = new Vector3(UnityEngine.Random.Range(-20, 20), 1.083333f, UnityEngine.Random.Range(-20, 20));
+        target = nextTarget;
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+         if (collision.gameObject.tag == "Player" && player.noiseLevel >= .75f)
+        {
+            //If the GameObject has the same tag as specified, output this message in the console
+            Debug.Log("You 2 loud, get outta here");
+        }
     }
 }
