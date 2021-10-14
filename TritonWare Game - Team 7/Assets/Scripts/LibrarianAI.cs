@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class LibrarianAI : MonoBehaviour
 {
-    public Transform playerPos;
     NavMeshAgent navMeshAgent;
     public Player player;
 
@@ -29,7 +28,7 @@ public class LibrarianAI : MonoBehaviour
 
         if (player.noiseLevel >= .75f)
         {
-            target = new Vector3(playerPos.position.x, 1.083333f, playerPos.position.z);
+            target = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
             Debug.Log("WOAH");
 
             alert.SetActive(true);
