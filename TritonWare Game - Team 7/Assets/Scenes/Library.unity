@@ -2613,6 +2613,10 @@ PrefabInstance:
       propertyPath: destination
       value: 
       objectReference: {fileID: 733624257}
+    - target: {fileID: 897132075794020320, guid: 54f82bd1c104a614c9449835b8380f85, type: 3}
+      propertyPath: librarianSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1840632720544050099, guid: 54f82bd1c104a614c9449835b8380f85, type: 3}
       propertyPath: m_Name
       value: Librarian

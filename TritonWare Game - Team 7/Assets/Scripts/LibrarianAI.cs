@@ -13,34 +13,28 @@ public class LibrarianAI : MonoBehaviour
     private Vector3 currentPosition;
 
     public GameObject alert;
+    public float librarianSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         navMeshAgent = this.GetComponent<NavMeshAgent>();
-        target = new Vector3(0f,1.083333f,0f);
+        navMeshAgent.speed = librarianSpeed;
+        target = new Vector3(0f,transform.position.y ,0f);
     }
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         currentPosition = transform.position;
 
         if (player.noiseLevel >= .75f)
         {
-            target = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-            Debug.Log("WOAH");
-
-            alert.SetActive(true);
+            AlertOn();
         }
         else
         {
-            if (currentPosition == target)
-            {
-                Wander();
-            }
-            
-            alert.SetActive(false);
+            AlertOff();
         }
 
         navMeshAgent.SetDestination(target);
@@ -48,7 +42,7 @@ public class LibrarianAI : MonoBehaviour
 
     void Wander()
     {
-        Vector3 nextTarget = new Vector3(UnityEngine.Random.Range(-20, 20), 1.083333f, UnityEngine.Random.Range(-20, 20));
+        Vector3 nextTarget = new Vector3(UnityEngine.Random.Range(-20, 20),transform.position.y, UnityEngine.Random.Range(-20, 20));
         target = nextTarget;
     }
 
@@ -59,5 +53,29 @@ public class LibrarianAI : MonoBehaviour
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("You 2 loud, get outta here");
         }
+    }
+
+    // Librarian switches to alerted mod 
+    void AlertOn()
+    {
+        target = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
+        Debug.Log("WOAH");
+
+        // Librarian speeds up
+        navMeshAgent.speed = 8.0f;
+
+        alert.SetActive(true);
+    }
+
+    // Librarian calmns down
+    void AlertOff()
+    {
+        if (currentPosition == target)
+        {
+            Wander();
+        }
+
+        alert.SetActive(false);
+        navMeshAgent.speed = librarianSpeed;
     }
 }
