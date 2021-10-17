@@ -33,15 +33,15 @@ public class Player : MonoBehaviour
 
         distance = Vector3.Distance(hotspot.position, transform.position);
 
-        signal.fillAmount = 1 / distance + .25f;
+        signal.fillAmount = 2 / (distance + .25f);  //This will need to be adjusted as we test out the whole map
 
 
-        if (signal.fillAmount >= .8f)
+        if (signal.fillAmount >= .85f)
         {
             loading.SetActive(true);
             sending.SetActive(true);
 
-            circle.fillAmount += .5f * Time.deltaTime;
+            circle.fillAmount += .5f * Time.deltaTime; //then we need to end it when this is full
         }
         else
         {
