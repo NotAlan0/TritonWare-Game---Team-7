@@ -59,7 +59,7 @@ public class LibrarianAI : MonoBehaviour
     void AlertOn()
     {
         target = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-        Debug.Log("WOAH");
+        //Debug.Log("WOAH"); This works and is messing up my testing, bad >:(
 
         // Librarian speeds up
         navMeshAgent.speed = 8.0f;

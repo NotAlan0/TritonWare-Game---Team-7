@@ -9,28 +9,29 @@ public class Transluscent : MonoBehaviour
     {
         RaycastHit hit;
        
-
-        //i changed the position and rotation to the camera's 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
         {
             hittable = hit.transform.gameObject;
-            Color thisColor = hittable.gameObject.GetComponent<Renderer>().material.color;
-            Debug.DrawLine(transform.position, transform.forward * 100f, Color.yellow);
+            if (hittable.gameObject.GetComponent<MeshRenderer>() != null) {
 
-            if (hit.transform.tag == "Block")
-            {
-                //make translucent
+                Color myNewColor = hittable.GetComponentInChildren<MeshRenderer>().material.color;
+                Debug.DrawLine(transform.position, transform.forward * 100f, Color.yellow);
 
-                thisColor.a = 0f;
-                thisColor = Color.red;
-                Debug.Log(hittable.gameObject.GetComponent<Renderer>().material);
+                if (hit.transform.tag == "Block")
+                {
+                    //make translucen
+                    myNewColor.a = 0.5f;
+                    hittable.gameObject.GetComponentInChildren<MeshRenderer>().material.color = myNewColor;
+                    Debug.Log(hittable.gameObject.GetComponentInChildren<MeshRenderer>().material);
 
-            }
-            else
-            {
-                //make opaque
-                thisColor.a = 125;
+                }
+                else
+                {
+                    myNewColor.a = 1f;
+                    hittable.gameObject.GetComponentInChildren<MeshRenderer>().material.color = myNewColor;
+                }
             }
         }
     }
+    
 }
