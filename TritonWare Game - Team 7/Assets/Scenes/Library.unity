@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (1)
@@ -527,7 +527,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (11)
@@ -593,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (10)
@@ -667,11 +667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hittable: {fileID: 0}
---- !u!20 &380020968 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 1907300341125677978, guid: 886850f727909454586316d0f3961cf3, type: 3}
-  m_PrefabInstance: {fileID: 1907300341543481065}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &386728207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,7 +1159,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (7)
@@ -1432,6 +1427,53 @@ Transform:
   m_Father: {fileID: 1408266029}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1079250420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079250422}
+  - component: {fileID: 1079250421}
+  m_Layer: 0
+  m_Name: CharSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1079250421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079250420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c9344672c8c49aa9167fad43894ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  librarianPrefab: {fileID: 1840632720544050099, guid: 54f82bd1c104a614c9449835b8380f85, type: 3}
+  playerPrefab: {fileID: 1907300340879071575, guid: 886850f727909454586316d0f3961cf3, type: 3}
+  librarianSpawnRange: {x: 0, y: 0}
+  playerSpawnRange: {x: 0, y: 0}
+--- !u!4 &1079250422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079250420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1146351752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1442,7 +1484,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (5)
@@ -1503,7 +1545,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (9)
@@ -1922,7 +1964,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (6)
@@ -1983,7 +2025,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (2)
@@ -2172,7 +2214,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (4)
@@ -2238,7 +2280,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (3)
@@ -2332,7 +2374,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1883828627 stripped
 Transform:
@@ -2458,7 +2500,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf (8)
@@ -2518,7 +2560,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1907300340879071528, guid: 886850f727909454586316d0f3961cf3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1907300340879071528, guid: 886850f727909454586316d0f3961cf3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2624,7 +2666,7 @@ PrefabInstance:
     - target: {fileID: 3644761110958629088, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 380020968}
+      objectReference: {fileID: 0}
     - target: {fileID: 5706837415195823608, guid: fc8619b86a96b0a4aae664b59017467c, type: 3}
       propertyPath: m_Name
       value: Bookshelf
