@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Hotspot
   - Block
+  - Signal
+  - Noise
+  - Sending
   layers:
   - Default
   - TransparentFX
