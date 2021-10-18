@@ -27,7 +27,7 @@ public class HotspotSpawner : MonoBehaviour
     void SpawnHotspot()
     {
         // Represents a random vector position 
-        Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-20, 20), 0, UnityEngine.Random.Range(-20, 20));
+        Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(spawnRange[0], spawnRange[1]), 0, UnityEngine.Random.Range(spawnRange[0], spawnRange[1]));
 
         // Creats a new instance of WifiHotspot objects aka spawns our hotspot
         GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject;
