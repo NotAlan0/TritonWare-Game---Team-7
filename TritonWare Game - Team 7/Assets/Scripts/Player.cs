@@ -16,12 +16,17 @@ public class Player : MonoBehaviour
 
     public Image circle;
     public GameObject sending;
-    public GameObject loading;
 
     // Start is called before the first frame update
     void Start()
     {
         circle.fillAmount = 0;
+
+        signal = GameObject.FindWithTag("Signal").GetComponent<Image>();
+        //hotspot = GameObject.FindWithTag("Hotspot").transform;  this one is already called in the Update()
+        noise = GameObject.FindWithTag("Noise").GetComponent<Image>();
+        circle = GameObject.FindWithTag("Circle").GetComponent<Image>();
+        sending = GameObject.FindWithTag("Sending");
     }
 
     void Update()
@@ -38,14 +43,12 @@ public class Player : MonoBehaviour
 
         if (signal.fillAmount >= .85f)
         {
-            loading.SetActive(true);
             sending.SetActive(true);
 
             circle.fillAmount += .5f * Time.deltaTime; //then we need to end it when this is full
         }
         else
         {
-            loading.SetActive(false);
             sending.SetActive(false);
         }
 
