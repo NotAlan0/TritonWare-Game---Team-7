@@ -21,6 +21,8 @@ public class LibrarianAI : MonoBehaviour
         navMeshAgent = this.GetComponent<NavMeshAgent>();
         navMeshAgent.speed = librarianSpeed;
         target = new Vector3(0f,transform.position.y ,0f);
+
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame

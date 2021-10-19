@@ -21,12 +21,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         circle.fillAmount = 0;
-
-        signal = GameObject.FindWithTag("Signal").GetComponent<Image>();
-        //hotspot = GameObject.FindWithTag("Hotspot").transform;  this one is already called in the Update()
-        noise = GameObject.FindWithTag("Noise").GetComponent<Image>();
-        circle = GameObject.FindWithTag("Circle").GetComponent<Image>();
-        sending = GameObject.FindWithTag("Sending");
     }
 
     void Update()
