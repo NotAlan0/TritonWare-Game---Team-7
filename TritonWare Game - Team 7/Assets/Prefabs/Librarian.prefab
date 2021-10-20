@@ -68,10 +68,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54130ddb65fb3547ac4f3c4549ee1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
   player: {fileID: 0}
-  targetVector: {x: 0, y: 0, z: 0}
+  target: {x: 0, y: 0, z: 0}
+  currentPosition: {x: 0, y: 0, z: 0}
   alert: {fileID: 7762989569813317000}
+  librarianSpeed: 2
 --- !u!1 &1840632721258000991
 GameObject:
   m_ObjectHideFlags: 0

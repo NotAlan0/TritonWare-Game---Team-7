@@ -5,33 +5,33 @@ using UnityEngine;
 public class Transluscent : MonoBehaviour
 {
     public GameObject hittable;
+    MeshRenderer storage;
     void Update()
     {
         RaycastHit hit;
-       
+        Color myNewColor;
         if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
         {
             hittable = hit.transform.gameObject;
-            if (hittable.gameObject.GetComponent<MeshRenderer>() != null) {
+            if (hittable.gameObject.GetComponent<MeshRenderer>() != null)
+            {
 
-                Color myNewColor = hittable.GetComponentInChildren<MeshRenderer>().material.color;
-                Debug.DrawLine(transform.position, transform.forward * 100f, Color.yellow);
-
+                myNewColor = hittable.GetComponentInChildren<MeshRenderer>().material.color;
                 if (hit.transform.tag == "Block")
                 {
-                    //make translucen
+                    storage = hittable.gameObject.GetComponentInChildren<MeshRenderer>();
+                    Debug.Log(storage);
                     myNewColor.a = 0.5f;
-                    hittable.gameObject.GetComponentInChildren<MeshRenderer>().material.color = myNewColor;
-                    Debug.Log(hittable.gameObject.GetComponentInChildren<MeshRenderer>().material);
-
+                    storage.material.color = myNewColor;
+                    Debug.Log(storage.material);
                 }
-                else
+                else { storage.material.color = myNewColor; }
+                if (storage.material.color != myNewColor)
                 {
                     myNewColor.a = 1f;
-                    hittable.gameObject.GetComponentInChildren<MeshRenderer>().material.color = myNewColor;
+                    storage.material.color = myNewColor;
                 }
             }
         }
     }
-    
 }

@@ -23,7 +23,8 @@ public class CharSpawner : MonoBehaviour
         SpawnLibrarian();
 
         //Spawns player as soon as the scene loads up 
-        SpawnPlayer();
+        // ! Commented for now
+        //SpawnPlayer();
     }
 
     // Method that spawns librarian
