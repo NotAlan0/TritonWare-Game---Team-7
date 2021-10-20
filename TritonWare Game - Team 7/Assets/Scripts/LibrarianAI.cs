@@ -28,7 +28,6 @@ public class LibrarianAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        currentPosition = transform.position;
 
         if (player.noiseLevel >= .75f)
         {
@@ -72,7 +71,7 @@ public class LibrarianAI : MonoBehaviour
     // Librarian calmns down
     void AlertOff()
     {
-        if (currentPosition == target)
+        if ((transform.position - target).magnitude <= 0.05f)
         {
             Wander();
         }
