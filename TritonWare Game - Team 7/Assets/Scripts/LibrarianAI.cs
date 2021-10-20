@@ -64,7 +64,7 @@ public class LibrarianAI : MonoBehaviour
         //Debug.Log("WOAH"); This works and is messing up my testing, bad >:(
 
         // Librarian speeds up
-        navMeshAgent.speed = 9.0f;
+        navMeshAgent.speed = 12f;
 
         alert.SetActive(true);
     }

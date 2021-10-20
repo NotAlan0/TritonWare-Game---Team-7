@@ -49,12 +49,12 @@ public class Player : MonoBehaviour
         currentPos = transform.position;
         if (currentPos == lastPos && noiseLevel >= 0)
         {
-            noiseLevel -= .5f * Time.deltaTime;
+            noiseLevel -= .3f * Time.deltaTime;
         }
         else
         if (currentPos != lastPos && noiseLevel <= 1)
         {
-            noiseLevel += .5f * Time.deltaTime;
+            noiseLevel += .3f * Time.deltaTime;
         }
         lastPos = currentPos;
 
