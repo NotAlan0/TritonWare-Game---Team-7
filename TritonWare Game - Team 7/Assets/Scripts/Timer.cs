@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
             else
             {
                 Debug.Log("Due time has passed, you dead!");
-                timeRemaining = 0;
+                timeRemaining = 0; //wait why is this here? if the timeRemaining is already less than 0, why do we set it to 0?
                 timerIsRunning = false;
             }
         }

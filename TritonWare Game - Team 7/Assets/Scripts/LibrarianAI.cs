@@ -15,6 +15,8 @@ public class LibrarianAI : MonoBehaviour
     public GameObject alert;
     public float librarianSpeed;
 
+    //public Text text;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +55,7 @@ public class LibrarianAI : MonoBehaviour
         {
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("You 2 loud, get outta here");
+            //Instantiate()
         }
     }
 
