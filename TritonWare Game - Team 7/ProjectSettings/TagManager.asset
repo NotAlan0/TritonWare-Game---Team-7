@@ -9,6 +9,7 @@ TagManager:
   - Signal
   - Noise
   - Sending
+  - PCollider
   layers:
   - Default
   - TransparentFX
