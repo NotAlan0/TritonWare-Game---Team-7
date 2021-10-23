@@ -40,5 +40,6 @@ public class StudentAI : MonoBehaviour
     {
         UnityEngine.Vector3 nextTarget = new UnityEngine.Vector3(UnityEngine.Random.Range(-30, 30), transform.position.y, UnityEngine.Random.Range(-30, 30));
         target = nextTarget;
+        navMeshAgent.SetDestination(target);
     }
 }
