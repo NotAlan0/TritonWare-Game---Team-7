@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Numerics;
 using System.Collections;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ public class StudentAI : MonoBehaviour
     void Update()
     { 
         // Doesn't depend on actuall position but rather the distance between two points
-        if ((transform.position - target).magnitude <= 0.05f)
+        if ((transform.position - target).magnitude <= 0.1f)
         {
             Wander();
         }
@@ -40,6 +41,5 @@ public class StudentAI : MonoBehaviour
     {
         UnityEngine.Vector3 nextTarget = new UnityEngine.Vector3(UnityEngine.Random.Range(-30, 30), transform.position.y, UnityEngine.Random.Range(-30, 30));
         target = nextTarget;
-        navMeshAgent.SetDestination(target);
     }
 }
