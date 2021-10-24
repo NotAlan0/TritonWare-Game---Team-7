@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1840632720544050124}
   - component: {fileID: 2313535942377817877}
   - component: {fileID: 897132075794020320}
+  - component: {fileID: 692362518192144943}
   m_Layer: 0
   m_Name: Librarian
   m_TagString: Untagged
@@ -73,6 +74,20 @@ MonoBehaviour:
   currentPosition: {x: 0, y: 0, z: 0}
   alert: {fileID: 7762989569813317000}
   librarianSpeed: 2
+--- !u!136 &692362518192144943
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840632720544050099}
+  m_Material: {fileID: 13400000, guid: 1297e82c161d43c4cb32a8955984678b, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1840632721258000991
 GameObject:
   m_ObjectHideFlags: 0

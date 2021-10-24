@@ -14,7 +14,7 @@ public class HotspotSpawner : MonoBehaviour
     // I set up the range (0,4)
     // TODO: Refactor the code so that it would work with the weird shape Geisel has 
     // ! MIGHT SPAWN INSIDE PILLARS, FIX IT! 
-    public Vector2 spawnRange;
+    public float spawnRange;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class HotspotSpawner : MonoBehaviour
     void SpawnHotspot()
     {
         // Represents a random vector position 
-        Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(spawnRange[0], spawnRange[1]), 0, UnityEngine.Random.Range(spawnRange[0], spawnRange[1]));
+        Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-30, 30), 0, UnityEngine.Random.Range(-30, 30));
 
         // Creats a new instance of WifiHotspot objects aka spawns our hotspot
         GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject;
