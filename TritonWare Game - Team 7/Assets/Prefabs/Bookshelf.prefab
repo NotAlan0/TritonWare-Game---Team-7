@@ -64,6 +64,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c78b58e6e8992724ca7d2cb6c5151612, type: 2}
+  - {fileID: 2100000, guid: a90b1b4ae5ac2cc4d9572d18d6d9d8dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,7 +150,7 @@ MonoBehaviour:
       m_FlipV: 0
       m_SwapUV: 0
       m_Fill: 1
-      m_Scale: {x: 2, y: 2}
+      m_Scale: {x: 1, y: 1}
       m_Offset: {x: -0.5, y: -0.5}
       m_Rotation: 0
       m_Anchor: 9
@@ -183,7 +184,7 @@ MonoBehaviour:
       m_FlipV: 0
       m_SwapUV: 0
       m_Fill: 1
-      m_Scale: {x: 2, y: 2}
+      m_Scale: {x: 1, y: 1}
       m_Offset: {x: -0.5, y: -0.5}
       m_Rotation: 0
       m_Anchor: 9
@@ -217,12 +218,12 @@ MonoBehaviour:
       m_FlipV: 0
       m_SwapUV: 0
       m_Fill: 1
-      m_Scale: {x: 0.5, y: 2}
+      m_Scale: {x: 1, y: 1}
       m_Offset: {x: -0.5, y: -0.5}
       m_Rotation: 0
       m_Anchor: 9
     m_Material: {fileID: 0}
-    m_SubmeshIndex: 0
+    m_SubmeshIndex: 1
     m_ManualUV: 0
     elementGroup: -1
     m_TextureGroup: -1
@@ -234,12 +235,12 @@ MonoBehaviour:
       m_FlipV: 0
       m_SwapUV: 0
       m_Fill: 1
-      m_Scale: {x: 0.5, y: 2}
+      m_Scale: {x: 1, y: 1}
       m_Offset: {x: -0.5, y: -0.5}
       m_Rotation: 0
       m_Anchor: 9
     m_Material: {fileID: 0}
-    m_SubmeshIndex: 0
+    m_SubmeshIndex: 1
     m_ManualUV: 0
     elementGroup: -1
     m_TextureGroup: -1
@@ -279,30 +280,30 @@ MonoBehaviour:
   - {x: 0.5, y: 0.5, z: 0.5}
   - {x: 0.5, y: -0.5, z: 0.5}
   m_Textures0:
-  - {x: -0.5, y: -0.5}
-  - {x: -0.5, y: 1.5}
-  - {x: 1.5, y: 1.5}
-  - {x: 1.5, y: -0.5}
-  - {x: -0.000000059604645, y: 0.000000029802322}
-  - {x: 0.000000029802322, y: 1}
-  - {x: 1, y: 1}
-  - {x: 1, y: -0.000000059604645}
-  - {x: 1.5, y: 1.5}
-  - {x: 1.5, y: -0.5}
-  - {x: -0.5, y: -0.5}
-  - {x: -0.5, y: 1.5}
   - {x: 0, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 1}
   - {x: 1, y: 0}
-  - {x: 0.25, y: -0.5}
-  - {x: 0.25, y: 1.5}
-  - {x: 0.75, y: 1.5}
-  - {x: 0.75, y: -0.5}
-  - {x: 0.25, y: -0.5}
-  - {x: 0.25, y: 1.5}
-  - {x: 0.75, y: 1.5}
-  - {x: 0.75, y: -0.5}
+  - {x: -0.000000059604645, y: 0.000000029802322}
+  - {x: 0.000000029802322, y: 1}
+  - {x: 1, y: 1}
+  - {x: 1, y: -0.000000059604645}
+  - {x: 1, y: 1}
+  - {x: 1, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 1}
+  - {x: 0, y: 0}
+  - {x: 0, y: 1}
+  - {x: 1, y: 1}
+  - {x: 1, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 1}
+  - {x: 1, y: 1}
+  - {x: 1, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 1}
+  - {x: 1, y: 1}
+  - {x: 1, y: 0}
   m_Textures2: []
   m_Textures3: []
   m_Tangents:
