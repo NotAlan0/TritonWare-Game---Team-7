@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +7,14 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public float timeRemaining = 10;
+
+    [SerializeField]
     public bool timerIsRunning = false;
     public Text timeText;
 
     private void Start()
     {
-        // Starts the timer automatically
-        timerIsRunning = true;
+       
     }
 
     void Update()
