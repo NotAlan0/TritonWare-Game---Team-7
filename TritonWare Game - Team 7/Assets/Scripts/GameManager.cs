@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
     // Imports TimerManager to deal with time
     public Timer TimerManager;
 
+    public GameObject Countdown;
+    public GameObject NoiseOutline;
+    public GameObject WifiOutline;
+    public GameObject WifiFilled;
+
     public GameObject StartButton;
 
 
@@ -19,8 +24,29 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Pulls all important game objects
+        Countdown = GameObject.Find("Countdown");
         TimerManager = GameObject.Find("Countdown").GetComponent<Timer>();
+
         StartButton = GameObject.Find("StartButton");
+
+        WifiOutline = GameObject.Find("WifiOutline");
+
+        WifiFilled = GameObject.Find("WifiFilled");
+
+        NoiseOutline = GameObject.Find("NoiseOutline");
+
+
+
+
+        // Dissables all of the UI 
+        NoiseOutline.SetActive(false);
+        Countdown.SetActive(false);
+        WifiOutline.SetActive(false);
+        WifiFilled.SetActive(false);
+
+        // Shows Start button Ui
+        StartButton.SetActive(true);
 
     }
 
@@ -37,7 +63,13 @@ public class GameManager : MonoBehaviour
         // Starts the timmer 
         TimerManager.timerIsRunning = true;
 
-        // Makes start button disappear
+        // Makes start button disappear and all of the other UI to appear
         StartButton.SetActive(false);
+
+        NoiseOutline.SetActive(true);
+        Countdown.SetActive(true);
+        WifiOutline.SetActive(true);
+        WifiFilled.SetActive(true);
+
     }
 }
