@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -70,6 +71,31 @@ public class GameManager : MonoBehaviour
         Countdown.SetActive(true);
         WifiOutline.SetActive(true);
         WifiFilled.SetActive(true);
+
+    }
+
+    void Update() 
+    {
+        GameFail();
+    }
+
+    void GameFail()
+    {
+        if(TimerManager.timeRemaining <= 0)
+        {
+            UnityEngine.Debug.Log("Game Over!");
+            RestartGame();
+            
+
+        }
+    }
+
+    void RestartGame()
+    {
+        // Relods the current scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
     }
 }
