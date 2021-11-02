@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject WifiFilled;
 
     public GameObject StartButton;
+    public GameObject RestartButton;
 
 
     //
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         TimerManager = GameObject.Find("Countdown").GetComponent<Timer>();
 
         StartButton = GameObject.Find("StartButton");
+        RestartButton = GameObject.Find("RestartButton"); 
 
         WifiOutline = GameObject.Find("WifiOutline");
 
@@ -41,14 +43,49 @@ public class GameManager : MonoBehaviour
 
 
         // Dissables all of the UI 
+        // ? This probably can be optimized
+        NoiseOutline.SetActive(false);
+        Countdown.SetActive(false);
+        WifiOutline.SetActive(false);
+        WifiFilled.SetActive(false);
+        RestartButton.SetActive(false);
+
+        // Shows Start button Ui
+        StartButton.SetActive(true);
+
+    }
+
+    void Update() 
+    {
+        // Its better to call a method once the req is met
+        // Rather then call a method every frame
+        if (TimerManager.timeRemaining <= 0)
+        {
+            GameFail();
+        }
+    }
+
+    // Calls the game fail screen
+    void GameFail()
+    {
+        UnityEngine.Debug.Log("Game Over!");
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // Stops the timer
+        TimerManager.timerIsRunning = false;
+
+        // Shows restart button
+        RestartButton.SetActive(true);
+
+        // Deactivate all of the unused UI
         NoiseOutline.SetActive(false);
         Countdown.SetActive(false);
         WifiOutline.SetActive(false);
         WifiFilled.SetActive(false);
 
-        // Shows Start button Ui
-        StartButton.SetActive(true);
-
+        
     }
 
     // Function that starts the game when StartButton is clicked
@@ -74,28 +111,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void Update() 
-    {
-        GameFail();
-    }
-
-    void GameFail()
-    {
-        if(TimerManager.timeRemaining <= 0)
-        {
-            UnityEngine.Debug.Log("Game Over!");
-            RestartGame();
-            
-
-        }
-    }
-
-    void RestartGame()
+    // Restarts the game
+    public void RestartGame()
     {
         // Relods the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
     }
 }
