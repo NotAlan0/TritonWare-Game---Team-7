@@ -15,6 +15,9 @@ public class LibrarianAI : MonoBehaviour
     public GameObject alert;
     public float librarianSpeed;
 
+    // Bool for if the player is isCaught
+    public bool isCaught = false;
+
     //public Text text;
 
     // Start is called before the first frame update
@@ -55,7 +58,9 @@ public class LibrarianAI : MonoBehaviour
         {
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("You 2 loud, get outta here");
-            //Instantiate()
+
+            // Shows that player is Caught
+            isCaught = true; 
         }
     }
 

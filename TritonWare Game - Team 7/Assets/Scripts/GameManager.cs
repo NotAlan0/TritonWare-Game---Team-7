@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     // Imports TimerManager to deal with time
     public Timer TimerManager;
+    public LibrarianAI LibrarianAI;
 
     public GameObject Countdown;
     public GameObject NoiseOutline;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         // Pulls all important game objects
         Countdown = GameObject.Find("Countdown");
         TimerManager = GameObject.Find("Countdown").GetComponent<Timer>();
+        LibrarianAI = GameObject.Find("Librarian(Clone)").GetComponent<LibrarianAI>();
 
         StartButton = GameObject.Find("StartButton");
         RestartButton = GameObject.Find("RestartButton"); 
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         // Its better to call a method once the req is met
         // Rather then call a method every frame
-        if (TimerManager.timeRemaining <= 0)
+        if ((TimerManager.timeRemaining <= 0) || (LibrarianAI.isCaught))
         {
             GameFail();
         }
