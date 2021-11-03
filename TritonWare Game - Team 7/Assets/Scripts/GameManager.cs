@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject WifiOutline;
     public GameObject WifiFilled;
 
+    public GameObject Background;
     public GameObject StartButton;
     public GameObject RestartButton;
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
         TimerManager = GameObject.Find("Countdown").GetComponent<Timer>();
         LibrarianAI = GameObject.Find("Librarian(Clone)").GetComponent<LibrarianAI>();
 
+        Background = GameObject.Find("Background");
         StartButton = GameObject.Find("StartButton");
         RestartButton = GameObject.Find("RestartButton"); 
 
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
 
         // Shows Start button Ui
         StartButton.SetActive(true);
+        Background.SetActive(true);
 
     }
 
@@ -80,6 +83,7 @@ public class GameManager : MonoBehaviour
 
         // Shows restart button
         RestartButton.SetActive(true);
+        Background.SetActive(true);
 
         // Deactivate all of the unused UI
         NoiseOutline.SetActive(false);
@@ -105,6 +109,7 @@ public class GameManager : MonoBehaviour
 
         // Makes start button disappear and all of the other UI to appear
         StartButton.SetActive(false);
+        Background.SetActive(false);
 
         NoiseOutline.SetActive(true);
         Countdown.SetActive(true);
