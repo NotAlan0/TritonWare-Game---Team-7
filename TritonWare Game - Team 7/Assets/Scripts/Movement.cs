@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     public float runningSpeed = 10f;
 
     CharacterController characterController;
+    public Animator anim;
     Vector3 moveDirection = Vector3.zero;
 
     [HideInInspector]
@@ -18,7 +19,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-
+        
         
     }
 
@@ -33,7 +34,8 @@ public class Movement : MonoBehaviour
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
+        anim.SetFloat("curSpeedX", Input.GetAxis("Horizontal"));
+        anim.SetFloat("curSpeedY", Input.GetAxis("Vertical"));
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
     }
