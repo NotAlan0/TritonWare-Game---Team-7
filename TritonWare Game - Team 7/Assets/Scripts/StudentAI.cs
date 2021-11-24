@@ -8,8 +8,9 @@ using UnityEngine.AI;
 public class StudentAI : MonoBehaviour
 {
     NavMeshAgent navMeshAgent;
-
+    public Animator Anim;
     public UnityEngine.Vector3 target;
+    public Rigidbody rb;
 
     [SerializeField]
     private UnityEngine.Vector3 currentPosition;
@@ -32,7 +33,8 @@ public class StudentAI : MonoBehaviour
         {
             Wander();
         }
-
+        Anim.SetFloat("Xspeed", rb.velocity.x);
+        Anim.SetFloat("YSpeed", rb.velocity.y);
         navMeshAgent.SetDestination(target);
 
     }
