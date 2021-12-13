@@ -15,6 +15,7 @@ public class StudentAI : MonoBehaviour
     [SerializeField]
     private UnityEngine.Vector3 currentPosition;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +34,9 @@ public class StudentAI : MonoBehaviour
         {
             Wander();
         }
-        Anim.SetFloat("Xspeed", rb.velocity.x);
-        Anim.SetFloat("YSpeed", rb.velocity.y);
+        
+        Anim.SetFloat("Xspeed", navMeshAgent.velocity.x);
+        Anim.SetFloat("Yspeed", navMeshAgent.velocity.y);
         navMeshAgent.SetDestination(target);
 
     }
@@ -44,4 +46,6 @@ public class StudentAI : MonoBehaviour
         UnityEngine.Vector3 nextTarget = new UnityEngine.Vector3(UnityEngine.Random.Range(-30, 30), transform.position.y, UnityEngine.Random.Range(-30, 30));
         target = nextTarget;
     }
+
+
 }
