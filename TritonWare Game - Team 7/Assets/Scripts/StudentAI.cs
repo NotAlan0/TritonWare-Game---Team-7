@@ -35,8 +35,8 @@ public class StudentAI : MonoBehaviour
             Wander();
         }
         
-        Anim.SetFloat("Xspeed", navMeshAgent.velocity.x);
-        Anim.SetFloat("Yspeed", navMeshAgent.velocity.y);
+        Anim.SetFloat("curSpeedX", navMeshAgent.velocity.x);
+        Anim.SetFloat("curSpeedY", navMeshAgent.velocity.y);
         navMeshAgent.SetDestination(target);
 
     }
