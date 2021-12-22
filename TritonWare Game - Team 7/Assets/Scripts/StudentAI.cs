@@ -15,7 +15,6 @@ public class StudentAI : MonoBehaviour
     [SerializeField]
     private UnityEngine.Vector3 currentPosition;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,6 @@ public class StudentAI : MonoBehaviour
         navMeshAgent.speed = 2;
 
         Wander();
-
     }
 
     // Update is called once per frame
@@ -34,11 +32,14 @@ public class StudentAI : MonoBehaviour
         {
             Wander();
         }
-        
-        Anim.SetFloat("curSpeedX", navMeshAgent.velocity.x);
-        Anim.SetFloat("curSpeedY", navMeshAgent.velocity.y);
-        navMeshAgent.SetDestination(target);
 
+        //Animations
+        Anim.SetFloat("Horizontal", navMeshAgent.velocity.x); // this velocity part is a bit wacky, idk what else to use tho
+        Anim.SetFloat("Vertical", navMeshAgent.velocity.y); // it works, but sometimes it acts wack as hell so yea
+        Anim.SetFloat("Speed", navMeshAgent.speed);
+
+        //Set target, Go to Target, buy Target popcorn
+        navMeshAgent.SetDestination(target);
     }
 
     void Wander()

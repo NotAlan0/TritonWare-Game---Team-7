@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    Vector2 movement;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -34,9 +36,16 @@ public class Movement : MonoBehaviour
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-        anim.SetFloat("curSpeedX", Input.GetAxis("Horizontal"));
-        anim.SetFloat("curSpeedY", Input.GetAxis("Vertical"));
+
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
+
+        //Animations
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        anim.SetFloat("Horizontal", movement.x);
+        anim.SetFloat("Vertical", movement.y);
+        anim.SetFloat("Speed", movement.sqrMagnitude);
     }
 }
