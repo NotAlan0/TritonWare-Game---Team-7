@@ -11,53 +11,45 @@ public class GameManager : MonoBehaviour
     public Timer TimerManager;
     public LibrarianAI LibrarianAI;
 
-    public GameObject Countdown;
-    public GameObject NoiseOutline;
-    public GameObject WifiOutline;
-    public GameObject WifiFilled;
+    public GameObject UI;
 
     public GameObject Background;
-    public GameObject StartButton;
-    public GameObject RestartButton;
-
+    public GameObject startMenu;
+    public GameObject restartScreen;
 
     //
     private bool m_IsGameActive = false; 
-
 
     // Start is called before the first frame update
     void Start()
     {
         // Pulls all important game objects
+
+        // We dont really need this, we can just set em in the game. Setting it so that it has to find each object is slow
+        /*
         Countdown = GameObject.Find("Countdown");
         TimerManager = GameObject.Find("Countdown").GetComponent<Timer>();
-        LibrarianAI = GameObject.Find("Librarian(Clone)").GetComponent<LibrarianAI>();
-
+        
         Background = GameObject.Find("Background");
         StartButton = GameObject.Find("StartButton");
         RestartButton = GameObject.Find("RestartButton"); 
 
         WifiOutline = GameObject.Find("WifiOutline");
-
         WifiFilled = GameObject.Find("WifiFilled");
-
         NoiseOutline = GameObject.Find("NoiseOutline");
-
-
+        */
+        
+        LibrarianAI = GameObject.Find("Librarian(Clone)").GetComponent<LibrarianAI>();
 
 
         // Dissables all of the UI 
         // ? This probably can be optimized
-        NoiseOutline.SetActive(false);
-        Countdown.SetActive(false);
-        WifiOutline.SetActive(false);
-        WifiFilled.SetActive(false);
-        RestartButton.SetActive(false);
+        UI.SetActive(false);
+        restartScreen.SetActive(false);
 
         // Shows Start button Ui
-        StartButton.SetActive(true);
+        startMenu.SetActive(true);
         Background.SetActive(true);
-
     }
 
     void Update() 
@@ -82,14 +74,11 @@ public class GameManager : MonoBehaviour
         TimerManager.timerIsRunning = false;
 
         // Shows restart button
-        RestartButton.SetActive(true);
+        restartScreen.SetActive(true);
         Background.SetActive(true);
 
         // Deactivate all of the unused UI
-        NoiseOutline.SetActive(false);
-        Countdown.SetActive(false);
-        WifiOutline.SetActive(false);
-        WifiFilled.SetActive(false);
+        UI.SetActive(false);
 
         
     }
@@ -108,13 +97,10 @@ public class GameManager : MonoBehaviour
         TimerManager.timerIsRunning = true;
 
         // Makes start button disappear and all of the other UI to appear
-        StartButton.SetActive(false);
+        startMenu.SetActive(false);
         Background.SetActive(false);
 
-        NoiseOutline.SetActive(true);
-        Countdown.SetActive(true);
-        WifiOutline.SetActive(true);
-        WifiFilled.SetActive(true);
+        UI.SetActive(true);
 
     }
 
