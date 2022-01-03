@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
         if (signal.fillAmount >= .85f)
         {
             sending.SetActive(true);
-
             circle.fillAmount += .5f * Time.deltaTime; //then we need to end it when this is full
         }
         else
@@ -51,8 +50,7 @@ public class Player : MonoBehaviour
         {
             noiseLevel -= .3f * Time.deltaTime;
         }
-        else
-        if (currentPos != lastPos && noiseLevel <= 1)
+        else if (currentPos != lastPos && noiseLevel <= 1)
         {
             noiseLevel += .3f * Time.deltaTime;
         }

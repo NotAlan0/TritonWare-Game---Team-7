@@ -8,8 +8,10 @@ using UnityEngine;
 // ! As my unity is still in a very junky setup
 public class HotspotSpawner : MonoBehaviour
 {
-
+    public GameObject bookshelf;
+    public GameObject desknchair;
     public GameObject hotspotPrefab;
+    static int uhOh;
 
     // I set up the range (0,4)
     // TODO: Refactor the code so that it would work with the weird shape Geisel has 
@@ -23,19 +25,37 @@ public class HotspotSpawner : MonoBehaviour
         SpawnHotspot();
     }
 
-    //
-    void SpawnHotspot()
+    //Recursive method to check whether the hotspot spawner is created over another mesh
+    bool SpawnHotspot()
     {
         // Represents a random vector position 
         Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-30, 30), 0, UnityEngine.Random.Range(-30, 30));
+        //GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject;     
+        RaycastHit hit;
 
-        // Creats a new instance of WifiHotspot objects aka spawns our hotspot
-        GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        if(uhOh > 500)
+        {
+            UnityEngine.Debug.Log("the uhOh number has broken");
+            //GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject; 
+            //this is only because everything breaks without it
+            return false;
+        }
+        if (Physics.Raycast( new Ray(spawnPosition, new Vector3(0, 0, -1)), out hit)) {
+            uhOh++;
+            UnityEngine.Debug.Log("Shooting a cast");
+            if (hit.transform.gameObject.CompareTag("Block") || hit.transform == null) { 
+                //this wont work right now, because the bookshelf/desknchair have meshes, not rigidbodies
+                uhOh++;
+                return SpawnHotspot();
+            }
+            else {
+                GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject;
+                return true;
+            }
+        } else { //if the raycast hits nothing, it's above open air
+            UnityEngine.Debug.Log("Over Nothing");
+            uhOh++;
+            return SpawnHotspot();
+        } 
     }
 }

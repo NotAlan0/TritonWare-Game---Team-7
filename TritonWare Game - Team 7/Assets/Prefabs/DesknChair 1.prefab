@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 1994243349288476245}
   m_Layer: 0
   m_Name: DesknChair 1
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
