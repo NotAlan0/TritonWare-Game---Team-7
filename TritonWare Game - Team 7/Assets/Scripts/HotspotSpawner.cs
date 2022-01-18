@@ -8,6 +8,8 @@ using UnityEngine;
 // ! As my unity is still in a very junky setup
 public class HotspotSpawner : MonoBehaviour
 {
+
+    public int timesToRecurse = 5000;
     public GameObject bookshelf;
     public GameObject desknchair;
     public GameObject hotspotPrefab;
@@ -33,7 +35,7 @@ public class HotspotSpawner : MonoBehaviour
         //GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject;     
         RaycastHit hit;
 
-        if(uhOh > 500)
+        if(uhOh > timesToRecurse)
         {
             UnityEngine.Debug.Log("the uhOh number has broken");
             //GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject; 
@@ -42,7 +44,7 @@ public class HotspotSpawner : MonoBehaviour
         }
         if (Physics.Raycast( new Ray(spawnPosition, new Vector3(0, 0, -1)), out hit)) {
             uhOh++;
-            UnityEngine.Debug.Log("Shooting a cast");
+            //UnityEngine.Debug.Log("Shooting a cast");
             if (hit.transform.gameObject.CompareTag("Block") || hit.transform == null) { 
                 //this wont work right now, because the bookshelf/desknchair have meshes, not rigidbodies
                 uhOh++;
