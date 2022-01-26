@@ -36,7 +36,7 @@ public class StudentAI : MonoBehaviour
         //Animations
         Anim.SetFloat("Horizontal", navMeshAgent.velocity.x); // this velocity part is a bit wacky, idk what else to use tho
         Anim.SetFloat("Vertical", navMeshAgent.velocity.y); // it works, but sometimes it acts wack as hell so yea
-        Anim.SetFloat("Speed", navMeshAgent.velocity.x + navMeshAgent.velocity.y); // this is terrible
+        Anim.SetFloat("Speed", Mathf.Abs(navMeshAgent.velocity.x + navMeshAgent.velocity.y)); // this is terrible
 
         //Set target, Go to Target, buy Target popcorn
         navMeshAgent.SetDestination(target);

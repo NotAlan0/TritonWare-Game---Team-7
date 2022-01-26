@@ -175,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 511608791340729757}
   - component: {fileID: 1994243349288476245}
+  - component: {fileID: 5761171277803291649}
   m_Layer: 0
   m_Name: DesknChair 1
   m_TagString: Block
@@ -214,6 +215,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 4, z: 5}
   m_Center: {x: 0, y: 0, z: -0.5}
+--- !u!208 &5761171277803291649
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887853237290704679}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1541471426395484692
 GameObject:
   m_ObjectHideFlags: 0
