@@ -18270,6 +18270,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1125388594}
     m_Modifications:
+    - target: {fileID: 250647121235355297, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 511608791340729757, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
       propertyPath: m_RootOrder
       value: 155
@@ -18314,9 +18318,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 801433532989411346, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 887853237290704679, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
       propertyPath: m_Name
       value: DesknChair 1 (155)
+      objectReference: {fileID: 0}
+    - target: {fileID: 887853237290704679, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541471426395484692, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717076123334381476, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033274285998556292, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222394369444169570, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724708004970430738, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9045985137389863397, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e6c28fc2c3c49746bb5ee60ea616dda, type: 3}
