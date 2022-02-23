@@ -8,6 +8,8 @@ public class LibrarianAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     public Player player;
 
+    public Animator LibAnimator;
+
     public Vector3 target;
     [SerializeField]
     private Vector3 currentPosition;
@@ -43,7 +45,12 @@ public class LibrarianAI : MonoBehaviour
             AlertOff();
         }
 
+        //Animation stuff
         navMeshAgent.SetDestination(target);
+
+        LibAnimator.SetFloat("Horizontal", navMeshAgent.velocity.x); // this velocity part is a bit wacky, idk what else to use tho
+        LibAnimator.SetFloat("Vertical", navMeshAgent.velocity.y); // it works, but sometimes it acts wack as hell so yea
+        LibAnimator.SetFloat("Speed", Mathf.Abs(navMeshAgent.velocity.x + navMeshAgent.velocity.y)); // this is terrible
     }
 
     void Wander()

@@ -31,7 +31,7 @@ public class HotspotSpawner : MonoBehaviour
     bool SpawnHotspot()
     {
         // Represents a random vector position 
-        Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-30, 30), 0, UnityEngine.Random.Range(-30, 30));
+        Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-spawnRange, spawnRange), 0, UnityEngine.Random.Range(-spawnRange, spawnRange));
         //GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject;     
         RaycastHit hit;
 

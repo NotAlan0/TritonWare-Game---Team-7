@@ -73,12 +73,18 @@ public class GameManager : MonoBehaviour
         // Stops the timer
         TimerManager.timerIsRunning = false;
 
+
+        // Deactivate all of the unused UI, then activate restart
+        UI.SetActive(false);
+
+
         // Shows restart button
         restartScreen.SetActive(true);
+
+        
         Background.SetActive(true);
 
-        // Deactivate all of the unused UI
-        UI.SetActive(false);
+        
 
         
     }

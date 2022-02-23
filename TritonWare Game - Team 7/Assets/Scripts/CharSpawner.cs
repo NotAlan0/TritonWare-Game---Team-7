@@ -16,11 +16,14 @@ public class CharSpawner : MonoBehaviour
     public Vector2 librarianSpawnRange;
     public Vector2 playerSpawnRange;
 
+    public int uhOh = 0;
+    public int timesToRecurse;
+
     // Start is called before the first frame update
     void Start()
     {
         //Spawns librarian as soon as the scene loads up 
-        SpawnLibrarian();
+        spawnLibrarian2();
 
         //Spawns player as soon as the scene loads up 
         // ! Commented for now
@@ -36,10 +39,47 @@ public class CharSpawner : MonoBehaviour
             1, 
             UnityEngine.Random.Range(librarianSpawnRange[0], librarianSpawnRange[1])
         );
-
         // Creats a new instance of librarian object aka spawns our librarian
         GameObject librarian = Instantiate(librarianPrefab, librarianSpawnPosition, Quaternion.identity) as GameObject;
+    }
 
+    bool spawnLibrarian2()
+    {
+        // Represents a random vector position 
+        Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-librarianSpawnRange[0], librarianSpawnRange[1]), 0, 
+               UnityEngine.Random.Range(-librarianSpawnRange[0], librarianSpawnRange[1]));
+        //GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject;     
+        RaycastHit hit;
+
+        if (uhOh > timesToRecurse)
+        {
+            UnityEngine.Debug.Log("the uhOh number has broken");
+            //GameObject hotspot = Instantiate(hotspotPrefab, spawnPosition, Quaternion.identity) as GameObject; 
+            //this is only because everything breaks without it
+            return false;
+        }
+        if (Physics.Raycast(new Ray(spawnPosition, new Vector3(0, 0, -1)), out hit))
+        {
+            uhOh++;
+            //UnityEngine.Debug.Log("Shooting a cast");
+            if (hit.transform.gameObject.CompareTag("Block") || hit.transform == null)
+            {
+                //this wont work right now, because the bookshelf/desknchair have meshes, not rigidbodies
+                uhOh++;
+                return spawnLibrarian2();
+            }
+            else
+            {
+                GameObject librarian = Instantiate(librarianPrefab, spawnPosition, Quaternion.identity) as GameObject;
+                return true;
+            }
+        }
+        else
+        { //if the raycast hits nothing, it's above open air
+            UnityEngine.Debug.Log("Over Nothing");
+            uhOh++;
+            return spawnLibrarian2();
+        }
     }
 
     // Method that spawns player
