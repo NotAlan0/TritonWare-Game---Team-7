@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         // Its better to call a method once the req is met
         // Rather then call a method every frame
-        if ((TimerManager.timeRemaining <= 0) || (LibrarianAI.isCaught))
+        if ((TimerManager.timeRemaining <= 0) || (LibrarianAI.isCaught)) 
         {
             GameFail();
         }
